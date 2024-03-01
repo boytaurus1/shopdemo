@@ -1,0 +1,13 @@
+﻿@model List<HangHoa>
+
+@{
+    Layout = "_DanhSachHangHoa";
+}
+
+<h1>Search Product</h1>
+<h3>Có @Model.Count() sản phẩm tìm thấy</h3>
+
+@foreach (var item in Model)
+{
+    <vc:vc-product-item item="item" />
+}

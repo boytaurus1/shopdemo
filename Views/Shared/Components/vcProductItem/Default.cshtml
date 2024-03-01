@@ -1,0 +1,23 @@
+﻿@model ShopHoaMVC.Models.HangHoa
+
+<div class="col-md-6 col-lg-6 col-xl-4">
+    <div class="rounded position-relative fruite-item">
+        <div class="fruite-img">
+            <a asp-action="Detail" asp-route-loai="@Model.MaHh">
+                <img src="~/Hinh/HangHoa/@Model.Hinh" class="img-fluid w-100 rounded-top" alt="">
+            </a>
+        </div>
+        @*<div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">Hot</div>*@
+        <div class="p-4 border-top-0 rounded-bottom">
+            <a asp-action="Detail" asp-route-loai="@Model.MaHh">
+                <h4 class="text-title">@Model.TenHh</h4>
+            </a>
+            <p class="text-box">@Model.MoTaDonVi</p>
+            <div class="d-flex justify-content-between flex-lg-wrap">
+                <p class="text-dark fs-5 fw-bold mb-0">$@Model.DonGia</p>
+                <a asp-controller="Cart" asp-action="AddToCart" asp-route-id="@Model.MaHh"
+                   class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+            </div>
+        </div>
+    </div>
+</div>
